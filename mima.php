@@ -36,7 +36,6 @@ function generate_password($length = 16, $spec_charcter = true) {
     return $password;
 }
 
-
 if (!is_numeric($query)) {
     die("错误的参数！\n");
 }
@@ -44,8 +43,8 @@ if (!is_numeric($query)) {
 $rtn = array();
 for ($i = 0; $i < $num; $i++) {
     $tmp = generate_password($query);
-    $rtn[] = $tmp;
-    $workflows->result($tmp, $tmp, $tmp, '土豪，我们做朋友吧', 'icon.png');
+    $tishi = sprintf("生成的第%d个密码", $i + 1);
+    $workflows->result($tmp, $tmp, $tmp, $tishi, 'icon.png');
 }
 
 echo $workflows->toxml();
